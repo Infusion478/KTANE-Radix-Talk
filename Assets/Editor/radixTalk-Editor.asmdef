@@ -1,0 +1,10 @@
+{
+  "name": "radixTalk-Editor",
+  "references": [
+    "radixTalk"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": []
+}
