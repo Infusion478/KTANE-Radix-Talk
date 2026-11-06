@@ -20,6 +20,6 @@ MonoBehaviour:
     can be found at ktane.timwi.de or in the bundled manuals folder.\nSource code
     is at https://github.com/Infusion478/KTANE-Radix-Talk\n\nComes with Twitch Plays
     support."
-  version: 1.1
+  version: 1.2
   outputFolder: build
   previewImage: {fileID: 2800000, guid: faede728990e91d438bcb3056da982b0, type: 3}
