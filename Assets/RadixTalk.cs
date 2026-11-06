@@ -14,7 +14,6 @@ public class RadixTalk : MonoBehaviour {
 
    public OutlinedText outlinedText;
    public AudioClip[] sounds;
-   public TextMesh focusedText;
 
    private int number, base1, radix, base2;
    private string alteredNumber, alteredRadix;
@@ -69,7 +68,6 @@ public class RadixTalk : MonoBehaviour {
 
    void Update() {
       if (focused && activated && animationFinished) {
-         focusedText.gameObject.SetActive(true);
          for (int i = 0; i < TypableKeys.Length; i++) {
             if (Input.GetKeyDown(TypableKeys[i]) && input.Length < 7) {
                if (i < 20)
@@ -91,8 +89,6 @@ public class RadixTalk : MonoBehaviour {
             animationFinished = false;
             StartCoroutine(CheckInput());
          }
-      } else {
-         focusedText.gameObject.SetActive(false);
       }
    }
 
