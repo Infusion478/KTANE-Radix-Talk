@@ -24,7 +24,7 @@ public class RadixTalk : MonoBehaviour {
    private KeyCode[] TypableKeys = {KeyCode.Alpha0, KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7, KeyCode.Alpha8, KeyCode.Alpha9, KeyCode.Keypad0, KeyCode.Keypad1, KeyCode.Keypad2, KeyCode.Keypad3, KeyCode.Keypad4, KeyCode.Keypad5, KeyCode.Keypad6, KeyCode.Keypad7, KeyCode.Keypad8, KeyCode.Keypad9, KeyCode.A, KeyCode.B, KeyCode.C, KeyCode.D, KeyCode.E, KeyCode.F};
    private KeyCode[] ExtraKeys = {KeyCode.Backspace, KeyCode.Return};
    private char[] subscripts = {'₀', '₁', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉'};
-   private int[] forbiddenBinaryNumbers = {64, 65, 66, 68, 72, 80, 96};
+   private int[] allowedBinaryNumbers = {79, 87, 91, 93, 94, 95, 103, 107, 109, 110, 111, 115, 117, 118, 119, 121, 122, 123, 124, 125, 126};
 
    private bool focused, activated, animationFinished;
 
@@ -54,7 +54,7 @@ public class RadixTalk : MonoBehaviour {
       base1 = Rnd.Range(2, 17);
       base2 = Rnd.Range(2, 17);
       number = Rnd.Range(0, 128);
-      if (base1 == 2 && forbiddenBinaryNumbers.Contains(number))
+      if (base1 == 2 && number > 63 && !allowedBinaryNumbers.Contains(number))
          number = Rnd.Range(0, 64);
       do radix = Rnd.Range(2, 17); while (radix == base1);
       Debug.LogFormat("[Radix Talk #{0}] In decimal, the module is asking to convert {1} into base {2}.", ModuleId, number, radix);
